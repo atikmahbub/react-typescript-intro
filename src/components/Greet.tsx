@@ -1,20 +1,14 @@
 import React from "react";
+import { personTypes } from "./person.type"; //* Nested Types,Reusable Types Example
 
 type GreetProps = {
   name: string;
   messageCount?: number;
   isLoggedIn: Boolean;
-  person: {
-    firstName: string;
-    lastName: string;
-  };
-  persons: {
-    first: string;
-    last: string;
-  }[];
-  testArray: (number | string)[];
-
-  status: "loading" | "success" | "error";
+  person: personTypes;
+  persons: personTypes[];
+  testArray: (number | string)[]; //* array can be number or string array
+  status: "loading" | "success" | "error"; //* only these three values are acceptable
 };
 
 const Greet = (props: GreetProps) => {
@@ -29,7 +23,7 @@ const Greet = (props: GreetProps) => {
       {props.person.firstName} {props.person.lastName}
       {props.persons.map((item) => (
         <li>
-          {item.first} {item.last}
+          {item.firstName} {item.lastName}
         </li>
       ))}
       {props.testArray.map((number) => (

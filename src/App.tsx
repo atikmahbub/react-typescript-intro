@@ -1,6 +1,9 @@
 import React from "react";
+import Button from "./components/Button";
+import Container from "./components/Container";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
+import Input from "./components/Input";
 import Oscar from "./components/Oscar";
 
 function App() {
@@ -10,8 +13,8 @@ function App() {
   };
 
   const persons = [
-    { first: "test", last: "user" },
-    { first: "test1", last: "user1" },
+    { firstName: "test", lastName: "user" },
+    { firstName: "test1", lastName: "user1" },
   ];
 
   const testArray = [1, 2, 3, 4, "4"];
@@ -29,6 +32,19 @@ function App() {
       <Oscar>
         <Heading>place holder heading</Heading>
       </Oscar>
+
+      <Button
+        handleClick={(event, id) => {
+          console.log("Button Clicked", event, id);
+        }}
+      />
+
+      <Input value="" handleChange={(event) => console.log(event)} />
+
+      <Container
+        styles={{ border: "1px solid red", padding: "10px" }}
+        text="i am container"
+      />
     </div>
   );
 }
