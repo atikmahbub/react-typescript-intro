@@ -5,6 +5,7 @@ import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
 import Oscar from "./components/Oscar";
+import User from "./components/User";
 
 function App() {
   const person = {
@@ -45,6 +46,8 @@ function App() {
         styles={{ border: "1px solid red", padding: "10px" }}
         text="i am container"
       />
+
+      <User />
     </div>
   );
 }
