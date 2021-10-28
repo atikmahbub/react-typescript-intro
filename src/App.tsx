@@ -1,11 +1,16 @@
 import React from "react";
+import Box from "./components/Box";
 import Button from "./components/Button";
 import Container from "./components/Container";
+import { Counter } from "./components/Counter";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
 import Oscar from "./components/Oscar";
+import { ThemeContextProvider } from "./components/ThemeContext";
 import User from "./components/User";
+import { UserContextProvider } from "./components/UserContext";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   const person = {
@@ -48,6 +53,16 @@ function App() {
       />
 
       <User />
+
+      <Counter />
+
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
+
+      <UserContextProvider>
+        <UserDetails />
+      </UserContextProvider>
     </div>
   );
 }
