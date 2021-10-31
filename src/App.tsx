@@ -7,10 +7,16 @@ import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
 import Oscar from "./components/Oscar";
+import DomRef from "./components/ref/DomRef";
+import MutableRef from "./components/ref/MutableRef";
 import { ThemeContextProvider } from "./components/ThemeContext";
 import User from "./components/User";
 import { UserContextProvider } from "./components/UserContext";
 import UserDetails from "./components/UserDetails";
+import Private from "./components/auth/Private";
+import Profile from "./components/auth/Profile";
+import List from "./components/generics/List";
+import CheckNumber from "./components/retricts/CheckNumber";
 
 function App() {
   const person = {
@@ -63,6 +69,23 @@ function App() {
       <UserContextProvider>
         <UserDetails />
       </UserContextProvider>
+
+      <DomRef />
+      <MutableRef />
+
+      <Private isLoggedIn={true} Component={Profile} />
+      {/* 
+      <List list={[1, 2, 3, 4, 4]} onClick={() => console.log("ss")} />
+      <List list={["sd", "sd", "qsa"]} onClick={() => console.log("ss")} /> */}
+      <List
+        list={[
+          { id: 1, first: "ss", last: "sds" },
+          { id: 2, first: "sds", last: "sdsdsd" },
+        ]}
+        onClick={() => console.log("ss")}
+      />
+
+      <CheckNumber value={10} isPositive />
     </div>
   );
 }
