@@ -18,6 +18,7 @@ import Profile from "./components/auth/Profile";
 import List from "./components/generics/List";
 import CheckNumber from "./components/retricts/CheckNumber";
 import Toast from "./components/templateliterals/Toast";
+import Text from "./components/polymorphic/Text";
 
 import CustomButton from "./components/wrappinghtml/Button";
 
@@ -95,6 +96,16 @@ function App() {
       <CustomButton variant="primary" onClick={() => console.log("clicked")}>
         Primary Button
       </CustomButton>
+
+      <Text as="h1" size="sm">
+        Heading
+      </Text>
+      <Text as="p" size="md">
+        Paragraph
+      </Text>
+      <Text as="label" htmlFor="someId" color="secondary">
+        Label
+      </Text>
     </div>
   );
 }
