@@ -17,6 +17,9 @@ import Private from "./components/auth/Private";
 import Profile from "./components/auth/Profile";
 import List from "./components/generics/List";
 import CheckNumber from "./components/retricts/CheckNumber";
+import Toast from "./components/templateliterals/Toast";
+
+import CustomButton from "./components/wrappinghtml/Button";
 
 function App() {
   const person = {
@@ -86,6 +89,12 @@ function App() {
       />
 
       <CheckNumber value={10} isPositive />
+
+      <Toast position="bottom-center" />
+
+      <CustomButton variant="primary" onClick={() => console.log("clicked")}>
+        Primary Button
+      </CustomButton>
     </div>
   );
 }
