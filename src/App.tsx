@@ -19,8 +19,9 @@ import List from "./components/generics/List";
 import CheckNumber from "./components/retricts/CheckNumber";
 import Toast from "./components/templateliterals/Toast";
 import Text from "./components/polymorphic/Text";
-
 import CustomButton from "./components/wrappinghtml/Button";
+import CounterComponent from "./components/renderProps/CounterComponent";
+import { count } from "console";
 
 function App() {
   const person = {
@@ -106,6 +107,19 @@ function App() {
       <Text as="label" htmlFor="someId" color="secondary">
         Label
       </Text>
+
+      <CounterComponent>
+        {(count, setCount) => {
+          return (
+            <div>
+              {count}
+              <button onClick={() => setCount((count) => count + 1)}>
+                Increment
+              </button>
+            </div>
+          );
+        }}
+      </CounterComponent>
     </div>
   );
 }
